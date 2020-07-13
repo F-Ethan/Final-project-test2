@@ -10,9 +10,10 @@ import {
   IonNote,
 } from '@ionic/react';
 
+
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, bookOutline, bookSharp, heartOutline, heartSharp, mailOutline, mailSharp, homeOutline, homeSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { bookmarkOutline, bookOutline, bookSharp, homeOutline, homeSharp, paperPlaneOutline, paperPlaneSharp, listOutline, listSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -25,40 +26,28 @@ interface AppPage {
 const appPages: AppPage[] = [
   {
     title: 'Home Page',
-    url: '/page/Inbox',
+    url: '/page/Home Page',
     iosIcon: homeOutline,
     mdIcon: homeSharp
   },
   {
+    title: 'Menu',
+    url: '/page/Menu',
+    iosIcon: listOutline,
+    mdIcon: listSharp
+  },
+  {
     title: 'About',
-    url: '/page/Outbox',
+    url: '/page/About',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
   {
     title: 'Blog',
-    url: '/page/Favorites',
+    url: '/page/Blog',
     iosIcon: bookOutline,
     mdIcon: bookSharp
   },
-  // {
-  //   title: 'Archived',
-  //   url: '/page/Archived',
-  //   iosIcon: archiveOutline,
-  //   mdIcon: archiveSharp
-  // },
-  // {
-  //   title: 'Trash',
-  //   url: '/page/Trash',
-  //   iosIcon: trashOutline,
-  //   mdIcon: trashSharp
-  // },
-  // {
-  //   title: 'Spam',
-  //   url: '/page/Spam',
-  //   iosIcon: warningOutline,
-  //   mdIcon: warningSharp
-  // }
 ];
 
 const labels = ['Family Outing', 'Friends Forge On', 'Note Taking in Class', 'Work Related Stress', 'Traveling Before your Thirty', 'Reminders of Your Age'];
@@ -67,16 +56,16 @@ const Menu: React.FC = () => {
   const location = useLocation();
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" >
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Our App</IonListHeader>
-          <IonNote>Contact@imbox.com</IonNote>
+          <IonNote>Contact@inbox.com</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={true}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon}  />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
               </IonMenuToggle>
