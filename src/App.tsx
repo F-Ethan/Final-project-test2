@@ -1,5 +1,5 @@
-import Menu from './components/Menu';
-import Login from './components/loginpage';
+import Menu from './components/Menus/Menu';
+import Login from './components/Menus/loginpage';
 import Page from './pages/Page';
 import React from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Login />
           <IonRouterOutlet id="main">
             <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Redirect from="/" to="/page/Home%20Page" exact />
           </IonRouterOutlet>
         {/* </IonSplitPane> */}
       </IonReactRouter>

@@ -1,7 +1,6 @@
 
 import {
     IonContent,
-    IonIcon,
     IonItem,
     IonLabel,
     IonList,
@@ -9,14 +8,11 @@ import {
     IonHeader,
     IonToolbar,
     IonTitle,
-    IonItemDivider,
     IonInput,
   } from '@ionic/react';
   
   
   import React from 'react';
-  import { useLocation } from 'react-router-dom';
-  import { bookmarkOutline, bookOutline, bookSharp, homeOutline, homeSharp, paperPlaneOutline, paperPlaneSharp } from 'ionicons/icons';
   import './Menu.css';
   
 
@@ -24,16 +20,14 @@ import {
 
 
 const Login: React.FC = () => {
-    const location = useLocation();
 
-    const [text, setText] = React.useState<string>();
-    const [number, setNumber] = React.useState<number>();
+    const [text] = React.useState<string>();
 
     return (
 
         <IonMenu side="end" type="overlay" menuId="login" contentId="main">
             <IonHeader>
-              <IonToolbar color="warning">
+              <IonToolbar color="primary">
                 <IonTitle>Admin Login</IonTitle>
               </IonToolbar>
             </IonHeader>

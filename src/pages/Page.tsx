@@ -11,13 +11,13 @@ const Page: React.FC = () => {
   const { name } = useParams<{ name: string; }>();
 
   return (
-    <IonPage>
+    <IonPage >
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>Build More: {name}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -39,13 +39,13 @@ const Page: React.FC = () => {
           <IonButton slot="end" color="none" size="small">
             <IonMenuToggle menu="end" autoHide={false}>
               <IonItem >
-                  <IonIcon slot="end" ios={keyOutline} md={keyOutline}  />                  
+                <IonIcon slot="end" ios={keyOutline} md={keyOutline} />
               </IonItem>
             </IonMenuToggle>
-            
+
           </IonButton>
 
-          
+
         </IonToolbar>
       </IonFooter>
     </IonPage>

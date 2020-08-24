@@ -48,6 +48,12 @@ const appPages: AppPage[] = [
     iosIcon: bookOutline,
     mdIcon: bookSharp
   },
+  {
+    title: 'Contact Page',
+    url: '/page/Contact Page',
+    iosIcon: bookOutline,
+    mdIcon: bookSharp
+  },
 ];
 
 const labels = ['Family Outing', 'Friends Forge On', 'Note Taking in Class', 'Work Related Stress', 'Traveling Before your Thirty', 'Reminders of Your Age'];
@@ -59,13 +65,13 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay" >
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Our App</IonListHeader>
-          <IonNote>Contact@inbox.com</IonNote>
+          <IonListHeader>That Food Truck</IonListHeader>
+          <IonNote>ThatFoodTruck@inbox.com</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={true}>
-                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon}  />
+                  <IonIcon slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
               </IonMenuToggle>
